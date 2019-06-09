@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title>TSP</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="js/dataLoader.js"></script>
+   <script src="js/generator.js"></script>
+   <script src="js/greedy.js"></script>
+   <script src="js/selfOrganizingMap.js"></script>
+</head>
+
+<body>
+   <h1> TPS </h1>
+   <div class="wrap">
+      <canvas id="canvas" width="600" height="600"></canvas>
+      <div class="menu">
+         <div class="form-wrap">
+            <div>
+               <div class="generate">
+                  <h2> Wybierz algorytm </h2>
+                  <div class="btn btn2 " onclick="toggleSwitcher(true)">Zachłanny</div>
+                  <div class="btn btn2 active" onclick="toggleSwitcher(false)">Self organizing map</div>
+               </div>
+
+               <div class="generate">
+                  <h2> Generuj losową instancję </h2>
+                  <div class="form-wrap">
+                     <input class="small" id="pointsNumber" type="number" placeholder="liczba punktow" />
+                     <div class="btn" id="generate">Generuj</div>
+                  </div>
+               </div>
+            </div>
+            <div class="load">
+               <h2> Załaduj gotową instancję </h2>
+               <div class="form-wrap">
+                  <div class="btn url" data-scale="25000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/bier127.tsp">
+                     bier127
+                  </div>
+                  <div class="btn url" data-scale="2000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/berlin52.tsp">
+                     berlin52
+                  </div>
+                  <div class="btn url" data-scale="1000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/ch150.tsp">
+                     ch150
+                  </div>
+               </div>
+               <div class="form-wrap">
+                  <div class="btn url" data-type="1" data-scale="300"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/a280.tsp">
+                     a280
+                  </div>
+                  <div class="btn url" data-scale="1500000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/dsj1000.tsp">
+                     dsj1000
+                  </div>
+                  <div class="btn url" data-scale="700" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/tsp225.tsp">
+                     tsp225
+                  </div>
+               </div>
+               <div class="form-wrap">
+                  <div class="btn url" data-scale="20000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/vm1748.tsp">
+                     vm1748
+                  </div>
+                  <div class="btn url" data-scale="5000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/kroA100.tsp">
+                     kroa100
+                  </div>
+                  <div class="btn url" data-scale="250" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/rat99.tsp">
+                     rat99
+                  </div>
+               </div>
+               <div class="form-wrap">
+                  <div class="btn url" data-scale="300" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/rat195.tsp">
+                     rat195
+                  </div>
+                  <div class="btn url" data-scale="5000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/kroA150.tsp">
+                     kroa150
+                  </div>
+                  <div class="btn url" data-scale="4000" data-type="1"
+                     data-url="http://elib.zib.de/pub/mp-testdata/tsp/tsplib/tsp/kroA200.tsp">
+                     kroa200
+                  </div>
+               </div>
+               <div class="form-wrap">
+                  <div class="btn url" data-scale="1100" data-type="2"
+                     data-url="http://www.cs.put.poznan.pl/mmachowiak/instances/tsp1000.txt">
+                     tsp1000
+
+                  </div>
+                  <div class="btn url" data-scale="6000" data-type="2"
+                     data-url="http://www.cs.put.poznan.pl/mmachowiak/instances/tsp500.txt">
+                     tsp500
+
+                  </div>
+                  <div class="btn url" data-scale="1600" data-type="2"
+                     data-url="http://www.cs.put.poznan.pl/mmachowiak/instances/tsp250.txt">
+                     tsp250
+
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+         <div>
+            <h2> Parametry</h2>
+            <label> Gain</label>
+            <input class="small" id="gain" type="number" value="50" placeholder="gain" />
+            <label> Alpha </label>
+            <input class="small" id="alpha" type="number" value="0.05" placeholder="alpha" />
+         </div>
+         <div class="result-wrap">
+            <div class="result-title">Dystans: </div>
+            <div class="result"> 0 </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="js/manageCanvas.js"></script>
+   <script src="js/main.js"></script>
+</body>
+
+</html>
